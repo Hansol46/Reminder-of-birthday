@@ -11,7 +11,7 @@ function Header({ title, onAddBirthday, showAdd }) {
       {/* Show button only then you on main page */}
       {location.pathname === "/" && (
         <Button
-          color={showAdd ? "red" : "green"}
+          color={showAdd ? "red" : "#F4A460"}
           text={showAdd ? "Закрыть" : "Добавить"}
           onAddBirthday={onAddBirthday}
         />
