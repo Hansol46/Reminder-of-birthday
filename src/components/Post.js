@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa";
-function Post({ birthday, onDelete, onToggle }) {
+
+export const Post = ({ birthday, onDelete, onToggle }) => {
   return (
     <div
       className={`task ${birthday.reminder ? "reminder" : ""}`}
@@ -16,6 +17,4 @@ function Post({ birthday, onDelete, onToggle }) {
       <p> {birthday.day} </p>
     </div>
   );
-}
-
-export default Post;
+};

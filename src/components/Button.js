@@ -1,6 +1,6 @@
 import React from "react";
 
-function Button({ color, text, onAddBirthday }) {
+export const Button = ({ color = "steelblue", text, onAddBirthday }) => {
   return (
     <button
       style={{ backgroundColor: color }}
@@ -10,9 +10,4 @@ function Button({ color, text, onAddBirthday }) {
       {text}
     </button>
   );
-}
-Button.defaultProps = {
-  color: "steelblue",
 };
-
-export default Button;

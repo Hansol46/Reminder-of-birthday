@@ -1,7 +1,8 @@
 import React from "react";
-import Post from "./Post";
+import { Footer } from "./Footer";
+import { Post } from "./Post";
 
-function BirthdayPosts({ birthdays, onDelete, onToggle }) {
+export const BirthdayPosts = ({ birthdays, onDelete, onToggle }) => {
   return (
     <>
       {birthdays.map((birthday) => (
@@ -12,8 +13,8 @@ function BirthdayPosts({ birthdays, onDelete, onToggle }) {
           onToggle={onToggle}
         />
       ))}
+
+      <Footer />
     </>
   );
-}
-
-export default BirthdayPosts;
+};

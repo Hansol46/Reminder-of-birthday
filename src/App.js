@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import MainPage from "./pages/MainPage";
-function App() {
-  const [birthdays, setBirthdays] = useState([
+import { MainPage } from "./pages/MainPage";
+
+/**
+ * Основной компонент
+ */
+export const App = () => {
+  const initialState = [
     {
       id: 1,
       person: "Мама",
@@ -20,40 +24,44 @@ function App() {
       day: "7.01.1977",
       reminder: true,
     },
-  ]);
-  //
+  ];
+  const [birthdays, setBirthdays] = useState(initialState);
   const [showAddBirthday, setShowAddBirthday] = useState(false);
 
-  // add new birthday
+  /**
+   * Добавить событие
+   */
   const addNewBirthday = (data) => {
-    const id = Math.floor(Math.random() * 1000)
-    const addNewPost = {id, ...data}
-    setBirthdays([...birthdays, addNewPost])
-  }
-  // delete birthday
+    const id = Math.floor(Math.random() * 1000);
+    const addNewPost = { id, ...data };
+    setBirthdays([...birthdays, addNewPost]);
+  };
+
+  /**
+   * Удалить событие
+   */
   const deleteBirthday = (id) => {
-    setBirthdays(birthdays.filter(birthday => birthday.id !== id))
-  }
+    setBirthdays(birthdays.filter((birthday) => birthday.id !== id));
+  };
+
   // добавление класса reminder
   const toggleReminder = (id) => {
     setBirthdays(
-      birthdays.map( birthday => 
-        birthday.id === id ? {...birthday, reminder: !birthday.reminder} : birthday
-        )
-    )
-  }
+      birthdays.map((birthday) =>
+        birthday.id === id
+          ? { ...birthday, reminder: !birthday.reminder }
+          : birthday
+      )
+    );
+  };
   return (
-    <>
-      <MainPage 
+    <MainPage
       onAddBirthday={() => setShowAddBirthday(!showAddBirthday)}
       showAdd={showAddBirthday}
-      birthdays={birthdays} 
-      onAdd={addNewBirthday} 
-      onDelete={deleteBirthday} 
+      birthdays={birthdays}
+      onAdd={addNewBirthday}
+      onDelete={deleteBirthday}
       onToggle={toggleReminder}
-      />
-    </>
+    />
   );
-}
-
-export default App;
+};

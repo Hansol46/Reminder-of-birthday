@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form({ onAdd }) {
+export const Form = ({ onAdd }) => {
   const [person, setPerson] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
@@ -57,6 +57,4 @@ function Form({ onAdd }) {
       <input type="submit" value="Сохранить данные" className="btn btn-block" />
     </form>
   );
-}
-
-export default Form;
+};
