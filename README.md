@@ -1,8 +1,8 @@
 # Edu simple todo list for remind of birthday
 
 <p align="center" display="flex">
-  <img src="./public/image/screen-1.jpg" width="400" height="400" title="hover text">
-  <img src="./public/image/screen-2.jpg" width="400" height="400" title="hover text">
+  <img src="./public/image/screen-1.jpg"  title="hover text">
+  <img src="./public/image/screen-2.jpg"  title="hover text">
 </p>
 
 # How start project:
